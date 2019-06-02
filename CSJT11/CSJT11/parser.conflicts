@@ -1,0 +1,11 @@
+// Parser Conflict Information for grammar file "parser.y - 1/05/2019 1:40:37 PM"
+
+Reduce/Reduce conflict in state 91 on symbol "'+'", parser will reduce production 97
+ Reduce 97:	MultiplicativeExpression -> UnaryExpression
+ Reduce 98:	UnaryExpression -> UnaryExpression
+
+Reduce/Reduce conflict in state 91 on symbol "';'", parser will reduce production 97
+ Reduce 97:	MultiplicativeExpression -> UnaryExpression
+ Reduce 98:	UnaryExpression -> UnaryExpression
+
+// End conflict information for parser

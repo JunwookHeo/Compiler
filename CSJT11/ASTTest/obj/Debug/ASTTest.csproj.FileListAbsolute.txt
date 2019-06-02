@@ -1,0 +1,12 @@
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/ASTTest.exe.config
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/ASTTest.exe
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/ASTTest.pdb
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/CSJT11.exe
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/ShiftReduceParser.dll
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/CSJT11.pdb
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/bin/Debug/CSJT11.exe.config
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/obj/Debug/ASTTest.csprojAssemblyReference.cache
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/obj/Debug/ASTTest.csproj.CoreCompileInputs.cache
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/obj/Debug/ASTTest.csproj.CopyComplete
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/obj/Debug/ASTTest.exe
+/home/junugi/Projects/IFN660/Repository11/CSJT11/ASTTest/obj/Debug/ASTTest.pdb

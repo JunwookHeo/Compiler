@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{01E5741A-D9C6-4A1B-BDF0-F7D45EAFBB4F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSJT11/AST/Declaration.cs">
+    <Files>
+      <File FileName="CSJT11/Program.cs" Line="16" Column="15" />
+      <File FileName="CSJT11/AST/Statement.cs" Line="147" Column="32" />
+      <File FileName="CSJT11/AST/Declaration.cs" Line="278" Column="37" />
+      <File FileName="CSJT11/AST/Expression.cs" Line="282" Column="33" />
+      <File FileName="CSJT11/scanner.lex" Line="93" Column="34" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CSJT11" expanded="True">
+            <Node name="ASTTest" expanded="True" />
+            <Node name="CSJT11" expanded="True">
+              <Node name="AST" expanded="True">
+                <Node name="Declaration.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CSJT11 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../CSJT11/Program.cs" line="23" offsetX="666" offsetY="418" expression="args" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
