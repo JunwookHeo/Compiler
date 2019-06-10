@@ -51,7 +51,7 @@ namespace ASTTest
                                         (
                                             new AssignmentExpression(
                                                 new ExpressionName("x"),
-                                                new Literal(42)
+                                                new IntegerLiteral(42)
                                             )
                                         )
                                     }

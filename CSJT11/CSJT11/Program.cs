@@ -13,7 +13,7 @@ namespace CSJT11
     {
         static void SemanticAnalysis(Node root)
         {
-            //root.DumpValue(0);
+            root.DumpValue(0);
             root.ResolveNames(null);
             root.TypeCheck();
         }

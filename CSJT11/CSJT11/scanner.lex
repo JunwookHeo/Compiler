@@ -61,6 +61,14 @@ EscapeSequence \b|\t|\n|\f|\r|\"|\'|\\|{OctalEscape}
 StringCharacter [^\"\\\r\n]|{EscapeSequence}
 StringLiteral "{StringCharacter}*"
 
+/* 3.10.2. Floating-Point Literals */ 
+FloatTypeSuffix f|F|d|D
+Sign            +|- 
+SignedInteger {Sign}?{Digits} 
+ExponentIndicator e|E 
+ExponentPart {ExponentIndicator}{SignedInteger} 
+DecimalFloatingPointLiteral {Digits}?\.{Digits}?{ExponentPart}?{FloatTypeSuffix}?|{Digits}{ExponentPart}?{FloatTypeSuffix}?
+FloatingPointLiteral {DecimalFloatingPointLiteral}
 
 %%
 
@@ -180,6 +188,9 @@ _									{ return (int)Tokens.Underscore; }
 "<<="							{return (int)Tokens.LeftShiftAnd;}
 ">>="							{return (int)Tokens.RightShiftAnd;}
 ">>>="						{return (int)Tokens.ShiftRightZeroFill;}
+
+/* 3.10.2. Floating-Point Literals */ 
+{FloatingPointLiteral}      { yylval.f = (float)System.Convert.ToDouble(yytext); return (int)Tokens.FloatingPointLiteral; }
 
 
 /* 3.6. White Space */

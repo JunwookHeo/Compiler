@@ -34,4 +34,7 @@ obj
 *.conflicts
 parser.cs
 scanner.cs
+parser.lst
+scanner.lst
+*.il
 

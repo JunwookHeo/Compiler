@@ -26,11 +26,13 @@ public static AST.CompilationUnit Root;
   public int num;
   public char c;
   public string name;
+  public float f;
   public List<string> nameList;
 }
 
 %token <name> Identifier
 %token <num> IntegerLiteral
+%token <f> FloatingPointLiteral
 
 /*  3.9. Keywords  */
 %token Abstract Continue For New Switch Assert Default If Package Synchronized Boolean Do Goto Private This Break Double Implements Protected Throw Byte Else Import Public Throws Case Enum Instanceof Return Transient Catch Extends Int Short Try Char Final Interface Static Void Class Finally Long Strictfp Volatile Const Float Native Super While Underscore
@@ -48,7 +50,7 @@ public static AST.CompilationUnit Root;
 %type <methodDeclaration>  MethodDeclaration MethodDeclarator MethodHeader 
 %type <methodmodifiers> MethodModifiers
 %type <methodmodifier> MethodModifier
-%type <type> UnannType UnannReferenceType UnannArrayType UnannClassOrInterfaceType UnannClassType LocalVariableType UnannPrimitiveType NumericType IntegeralType Result
+%type <type> UnannType UnannReferenceType UnannArrayType UnannClassOrInterfaceType UnannClassType LocalVariableType UnannPrimitiveType NumericType IntegeralType Result FloatingPointType
 %type <compilationUnit> CompilationUnit OrdinaryCompilationUnit
 %type <formalParameters> FormalParameters FormalParameterList FormalParameterList_opt
 %type <formalParameter> FormalParameter
@@ -306,6 +308,7 @@ UnannPrimitiveType
 
 NumericType
 	: IntegeralType { $$ = $1; }
+    | FloatingPointType { $$ = $1; }
 	;
 
 IntegeralType
@@ -315,6 +318,10 @@ IntegeralType
   | Long { $$ = new AST.PrimitiveType(AST.UnannPrimitiveType.Long); }
   | Char { $$ = new AST.PrimitiveType(AST.UnannPrimitiveType.Char); }
 	;
+	
+FloatingPointType
+    : Float { $$ = new AST.PrimitiveType(AST.UnannPrimitiveType.Float); }
+    ; 
 
 VariableDeclarationList
 	: VariableDeclarators VariableDeclarator { $$ = $1; $$.Add($2); }
@@ -452,7 +459,8 @@ PrimaryNoNewArray
   ;
 
 Literal
-  : IntegerLiteral  { $$ = new AST.Literal($1); }
+  : IntegerLiteral  { $$ = new AST.IntegerLiteral($1); }
+  | FloatingPointLiteral { $$ = new AST.FloatingPointLiteral($1); }
   ;
 
 PreIncrementExpression

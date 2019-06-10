@@ -1,23 +1,33 @@
 ﻿<Properties StartupConfiguration="{01E5741A-D9C6-4A1B-BDF0-F7D45EAFBB4F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CSJT11/scanner.lex">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ASTTest/Program.cs">
     <Files>
-      <File FileName="CSJT11/Program.cs" Line="16" Column="15" />
+      <File FileName="CSJT11/Program.cs" Line="17" Column="37" />
       <File FileName="CSJT11/AST/Statement.cs" Line="147" Column="32" />
-      <File FileName="CSJT11/AST/Declaration.cs" Line="278" Column="14" />
-      <File FileName="CSJT11/AST/Expression.cs" Line="282" Column="33" />
-      <File FileName="CSJT11/scanner.lex" Line="110" Column="40" />
+      <File FileName="CSJT11/AST/Declaration.cs" Line="76" Column="27" />
+      <File FileName="CSJT11/AST/Expression.cs" Line="135" Column="32" />
+      <File FileName="CSJT11/scanner.lex" Line="70" Column="39" />
+      <File FileName="CSJT11/scanner.cs" Line="1" Column="1" />
+      <File FileName="CSJT11/parser.y" Line="463" Column="61" />
+      <File FileName="CSJT11/parser.cs" Line="1" Column="1" />
+      <File FileName="CSJT11/AST/Type.cs" Line="53" Column="29" />
+      <File FileName="ASTTest/Program.cs" Line="62" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CSJT11" expanded="True">
-            <Node name="ASTTest" expanded="True" />
+            <Node name="ASTTest" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
             <Node name="CSJT11" expanded="True">
               <Node name="References" expanded="True" />
-              <Node name="scanner.lex" selected="True" />
+              <Node name="AST" expanded="True" />
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

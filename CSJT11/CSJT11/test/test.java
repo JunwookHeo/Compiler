@@ -4,7 +4,7 @@ public class HelloWorld
     public static int main(string[] args) 
 	{
             int x, y;
-            x = 5;
+	    x = 1.1;
             if (x == 5)
             {
                 y = 1;
