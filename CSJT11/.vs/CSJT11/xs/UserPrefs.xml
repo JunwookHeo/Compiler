@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{01E5741A-D9C6-4A1B-BDF0-F7D45EAFBB4F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CSJT11/AST/Declaration.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CSJT11/scanner.lex">
     <Files>
       <File FileName="CSJT11/Program.cs" Line="16" Column="15" />
       <File FileName="CSJT11/AST/Statement.cs" Line="147" Column="32" />
-      <File FileName="CSJT11/AST/Declaration.cs" Line="278" Column="37" />
+      <File FileName="CSJT11/AST/Declaration.cs" Line="278" Column="14" />
       <File FileName="CSJT11/AST/Expression.cs" Line="282" Column="33" />
-      <File FileName="CSJT11/scanner.lex" Line="93" Column="34" />
+      <File FileName="CSJT11/scanner.lex" Line="110" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +13,8 @@
           <Node name="CSJT11" expanded="True">
             <Node name="ASTTest" expanded="True" />
             <Node name="CSJT11" expanded="True">
-              <Node name="AST" expanded="True">
-                <Node name="Declaration.cs" selected="True" />
-              </Node>
+              <Node name="References" expanded="True" />
+              <Node name="scanner.lex" selected="True" />
             </Node>
           </Node>
         </State>

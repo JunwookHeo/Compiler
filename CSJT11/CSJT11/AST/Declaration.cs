@@ -74,7 +74,6 @@ namespace CSJT11.AST
         public LocalVariable AddLocalVariableForReturn(Type type)
         {
             int order = 0;
-            bool isSet = false;
 
             if (localVariables != null)
                 order = localVariables.Count;

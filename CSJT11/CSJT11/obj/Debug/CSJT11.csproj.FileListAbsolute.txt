@@ -1,9 +1,0 @@
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/bin/Debug/CSJT11.exe.config
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/bin/Debug/CSJT11.exe
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/bin/Debug/CSJT11.pdb
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/bin/Debug/ShiftReduceParser.dll
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/obj/Debug/CSJT11.csproj.CoreCompileInputs.cache
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/obj/Debug/CSJT11.csproj.CopyComplete
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/obj/Debug/CSJT11.exe
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/obj/Debug/CSJT11.pdb
-/home/junugi/Projects/IFN660/Repository11/CSJT11/CSJT11/obj/Debug/CSJT11.csprojAssemblyReference.cache
