@@ -34,6 +34,7 @@ public static AST.CompilationUnit Root;
 %token <name> Identifier
 %token <num> IntegerLiteral
 %token <f> FloatingPointLiteral
+%token <name> StringLiteral
 
 /*  3.9. Keywords  */
 %token Abstract Continue For New Switch Assert Default If Package Synchronized Boolean Do Goto Private This Break Double Implements Protected Throw Byte Else Import Public Throws Case Enum Instanceof Return Transient Catch Extends Int Short Try Char Final Interface Static Void Class Finally Long Strictfp Volatile Const Float Native Super While Underscore
@@ -229,6 +230,7 @@ UnannType
 
 UnannReferenceType
 	: UnannArrayType { $$ = $1; }
+    | UnannClassOrInterfaceType { $$ = $1; }
 	;
 
 UnannArrayType
@@ -264,8 +266,7 @@ DimsArray
 Annotations
  	: /* empty */
   ;
-
-
+  
 MethodBody
 	:Block  { $$ = $1; }
 	;
@@ -461,11 +462,12 @@ Primary
   ;
 PrimaryNoNewArray
   : Literal { $$ = $1; }
-  ;
+  ; 
 
 Literal
   : IntegerLiteral  { $$ = new AST.IntegerLiteral($1); }
   | FloatingPointLiteral { $$ = new AST.FloatingPointLiteral($1); }
+  | StringLiteral { $$ = new AST.StringLiteral($1); }
   ;
 
 PreIncrementExpression

@@ -54,12 +54,11 @@ TODO : Add belows to IntegerLiteral
 |{BinaryIntegerLiteral}
 */
 
-/* 3.10.2. String Literals  (not very sure)*/
-ZeroToThree [0-3]
-OctalEscape ^\\{OctalDigit}|^\\{OctalDigit}{OctalDigit}|^\\{ZeroToThree}{OctalDigit}{OctalDigit} 
-EscapeSequence \b|\t|\n|\f|\r|\"|\'|\\|{OctalEscape}
-StringCharacter [^\"\\\r\n]|{EscapeSequence}
-StringLiteral "{StringCharacter}*"
+/* 3.10.5. String Literals */
+StringCharacter [^\\\"]|\\[tn\"]
+StringLiteral  \"{StringCharacter}*\"
+
+
 
 /* 3.10.2. Floating-Point Literals */ 
 FloatTypeSuffix f|F|d|D
@@ -189,8 +188,11 @@ _									{ return (int)Tokens.Underscore; }
 ">>="							{return (int)Tokens.RightShiftAnd;}
 ">>>="						{return (int)Tokens.ShiftRightZeroFill;}
 
-/* 3.10.2. Floating-Point Literals */ 
+/* 3.10.2 Floating-Point Literals */ 
 {FloatingPointLiteral}      { yylval.f = (float)System.Convert.ToDouble(yytext); return (int)Tokens.FloatingPointLiteral; }
+
+/* 3.10.5 String Literals */ 
+{StringLiteral}      { yylval.name = yytext; return (int)Tokens.StringLiteral; }
 
 
 /* 3.6. White Space */

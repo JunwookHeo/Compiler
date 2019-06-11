@@ -39,7 +39,7 @@ namespace CSJT11.AST
 
             if (this.rhs.type.Compatible(this.lhs.type) == false)
             {
-                throw new Exception("Mismatch Type");
+                 throw new Exception("Mismatch Type");
             }
             this.type = lhs.type;
         }
@@ -151,7 +151,7 @@ namespace CSJT11.AST
         }
     }
 
-        public class FloatingPointLiteral : Expression
+    public class FloatingPointLiteral : Expression
     {
         private float value;
         public FloatingPointLiteral(float value)
@@ -166,6 +166,30 @@ namespace CSJT11.AST
         public override void TypeCheck()
         {
             this.type = new PrimitiveType(UnannPrimitiveType.Float);
+        }
+
+        public override void GenCode(StreamWriter of, string genOption, int level)
+        {
+            //if (genOption == "[[load]]")
+            //    EmitLine(of, level, "ldc.i4 {0}", this.value);
+        }
+    }
+
+    public class StringLiteral : Expression
+    {
+        private string value;
+        public StringLiteral(string value)
+        {
+            this.value = value;
+        }
+
+        public override void ResolveNames(LexicalScope scope)
+        {
+        }
+
+        public override void TypeCheck()
+        {
+            this.type = new NameType("String");
         }
 
         public override void GenCode(StreamWriter of, string genOption, int level)
