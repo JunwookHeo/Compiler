@@ -3,11 +3,6 @@ using System.IO;
 
 namespace CSJT11.AST
 {
-    //public enum OperatorType
-    //{
-    //    EQ = 0,
-    //    PL = 1
-    //}
     public abstract class Expression : Node
     {
         //contain value
@@ -283,6 +278,40 @@ namespace CSJT11.AST
         {
             base.GenCode(of, genOption, level);
             EmitLine(of, level, "ceq");
+        }
+    }
+
+    public class LessBinaryExpression : BinaryExpression
+    {
+        public LessBinaryExpression(Expression lhs, Expression rhs)
+            : base(lhs, rhs) { }
+
+        public override void TypeCheck()
+        {
+            base.TypeCheck();
+            this.type = this.rhs.type;
+        }
+        public override void GenCode(StreamWriter of, string genOption, int level)
+        {
+            base.GenCode(of, genOption, level);
+            EmitLine(of, level, "leq");
+        }
+    }
+
+    public class GreaterBinaryExpression : BinaryExpression
+    {
+        public GreaterBinaryExpression(Expression lhs, Expression rhs)
+            : base(lhs, rhs) { }
+
+        public override void TypeCheck()
+        {
+            base.TypeCheck();
+            this.type = this.rhs.type;
+        }
+        public override void GenCode(StreamWriter of, string genOption, int level)
+        {
+            base.GenCode(of, genOption, level);
+            EmitLine(of, level, "geq");
         }
     }
 

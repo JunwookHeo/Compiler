@@ -3,15 +3,13 @@ public class HelloWorld
 
     public static int main(string[] args) 
 	{
-            int x, y;
-	    x = 1.1;
-            if (x == 5)
+            int x, i;
+	    x = 0;
+            for (i = 0; i <5; i++)
             {
-                y = 1;
-                return y;
+		x = i;
             }
-            y = 2;
-            return y + 1;
+            return x;
 
     }
 

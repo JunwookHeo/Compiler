@@ -1,33 +1,32 @@
 ﻿<Properties StartupConfiguration="{01E5741A-D9C6-4A1B-BDF0-F7D45EAFBB4F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ASTTest/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Build Output 2:30 PM 2019-06-11.binlog">
     <Files>
       <File FileName="CSJT11/Program.cs" Line="17" Column="37" />
-      <File FileName="CSJT11/AST/Statement.cs" Line="147" Column="32" />
+      <File FileName="CSJT11/AST/Statement.cs" Line="285" Column="81" />
       <File FileName="CSJT11/AST/Declaration.cs" Line="76" Column="27" />
-      <File FileName="CSJT11/AST/Expression.cs" Line="135" Column="32" />
-      <File FileName="CSJT11/scanner.lex" Line="70" Column="39" />
+      <File FileName="CSJT11/AST/Expression.cs" Line="314" Column="35" />
+      <File FileName="CSJT11/scanner.lex" Line="73" Column="3" />
       <File FileName="CSJT11/scanner.cs" Line="1" Column="1" />
-      <File FileName="CSJT11/parser.y" Line="463" Column="61" />
+      <File FileName="CSJT11/parser.y" Line="505" Column="29" />
       <File FileName="CSJT11/parser.cs" Line="1" Column="1" />
       <File FileName="CSJT11/AST/Type.cs" Line="53" Column="29" />
       <File FileName="ASTTest/Program.cs" Line="62" Column="20" />
+      <File FileName="CSJT11/AST/CompilationUnit.cs" Line="11" Column="42" />
+      <File FileName="CSJT11/AST/ClassDeclaration.cs" Line="40" Column="14" />
+      <File FileName="Build Output 2:30 PM 2019-06-11.binlog" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CSJT11" expanded="True">
-            <Node name="ASTTest" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+            <Node name="ASTTest" expanded="True" />
             <Node name="CSJT11" expanded="True">
               <Node name="References" expanded="True" />
               <Node name="AST" expanded="True" />
+              <Node name="parser.y" selected="True" />
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

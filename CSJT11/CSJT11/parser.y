@@ -22,6 +22,7 @@ public static AST.CompilationUnit Root;
   public List<AST.Statement> statements;
   public AST.BlockStatements blockStatements;
   public AST.Expression expression;
+  public List<AST.Expression> expressions;
   public AST.AssignmentExpression assignmentExpression;
   public int num;
   public char c;
@@ -56,7 +57,7 @@ public static AST.CompilationUnit Root;
 %type <formalParameter> FormalParameter
 %type <statements> BlockStatements_opt BlockStatements 
 %type <statement> MethodBody Block Statement BlockStatement LocalVariableDeclarationStatement StatementWithoutTrailingSubstatement ExpressionStatement
-%type <statement> ReturnStatement IfThenStatement
+%type <statement> ReturnStatement IfThenStatement WhileStatement ForStatement BasicForStatement
 
 %type <nameList> VariableDeclarationList VariableDeclarators PackageDeclaration PackageDeclaration_opt Identifiers
 %type <name> VariableDeclarator VariableDeclaratorId TypeIdentifier
@@ -65,7 +66,7 @@ public static AST.CompilationUnit Root;
 %type <expression> Expression_opt PostIncrementExpression PreIncrementExpression 
 
 %type <assignmentExpression> Assignment AssignmentOperator
-/* %type <num> AssignmentOperator */
+%type <expressions> StatementExpressionList StatementExpressions ForInit ForUpdate
 
 %left '='
 %nonassoc '<'
@@ -344,6 +345,8 @@ VariableInitializer_opt
 Statement
   : StatementWithoutTrailingSubstatement  { $$ = $1; }
   | IfThenStatement { $$ = $1; }
+  | WhileStatement  { $$ = $1; }
+  | ForStatement    { $$ = $1; }
   ;
 
 StatementWithoutTrailingSubstatement
@@ -420,6 +423,8 @@ EqualityExpression
 
 RelationalExpression
   : ShiftExpression  { $$ = $1; }
+  | RelationalExpression '<' ShiftExpression { $$ = new AST.LessBinaryExpression($1, $3); }
+  | RelationalExpression '>' ShiftExpression { $$ = new AST.GreaterBinaryExpression($1, $3); }
   ;
 
 ShiftExpression
@@ -483,7 +488,37 @@ Expression_opt
 IfThenStatement
   : If '(' Expression ')' Statement { $$ = new AST.IfThenStatement($3, $5); }
   ;
+  
+WhileStatement
+  : While '(' Expression ')' Statement  { $$ = new AST.WhileStatement($3, $5); }
+  ; 
+  
+ForStatement
+  : BasicForStatement { $$ = $1; }
+  ;
 
+BasicForStatement
+  : For '(' ForInit ';' Expression ';' ForUpdate ')' Statement { $$ = new AST.ForStatement($3, $5, $7); }
+  ;
+  
+ForInit
+  : StatementExpressionList  { $$ = $1; }
+  ;
+  
+ForUpdate
+  : StatementExpressionList  { $$ = $1;}
+  ;
+  
+StatementExpressionList
+  : StatementExpressions StatementExpression  { $$ = $1; $$.Add($2); }
+  ;
+  
+StatementExpressions
+  : StatementExpressions StatementExpression ','  { $$ = $1; $$.Add($2); }
+  | /*empty*/                                         { $$ = new List<AST.Expression>(); }
+  ;
+  
+  
 %%
 
 public Parser(Scanner scanner) : base(scanner)

@@ -13,8 +13,8 @@ namespace CSJT11.AST
     public class BlockStatements : Statement
     {
         private LexicalScope symboltable;
-
         private List<Statement> statements;
+
         public BlockStatements(List<Statement> statements)
         {
             this.statements = statements;
@@ -223,6 +223,117 @@ namespace CSJT11.AST
                 this.statement.GenCode(of, genOption, level);
             }
             EmitLine(of, level-1, "{0}_IF: ", genOption);
+        }
+    }
+
+    public class WhileStatement : Statement
+    {
+        private Expression exp;
+        private Statement statement;
+
+        public WhileStatement(Expression exp, Statement statement)
+        {
+            this.exp = exp;
+            this.statement = statement;
+        }
+
+        public override void ResolveNames(LexicalScope scope)
+        {
+            if (this.exp != null)
+                this.exp.ResolveNames(scope);
+            if (this.statement != null)
+                this.statement.ResolveNames(scope);
+        }
+
+        public override void TypeCheck()
+        {
+            if (this.exp != null)
+                this.exp.TypeCheck();
+            if (this.statement != null)
+                this.statement.TypeCheck();
+        }
+
+        public override void SetVariable(System.Type type, LocalVariableDeclaration lvd, Type val)
+        {
+            if (type == typeof(ReturnStatement) && this.statement != null)
+                this.statement.SetVariable(type, lvd, val);
+        }
+
+        public override void GenCode(StreamWriter of, string genOption, int level)
+        {
+            if (this.exp != null)
+            {
+                this.exp.GenCode(of, "[[load]]", level);
+            }
+
+            EmitLine(of, level, "brfalse \t {0}_IF", genOption);
+
+            if (this.statement != null)
+            {
+                this.statement.GenCode(of, genOption, level);
+            }
+            EmitLine(of, level - 1, "{0}_IF: ", genOption);
+        }
+    }
+
+    public class ForStatement : Statement
+    {
+        private List<Expression> forinit;
+        private Expression exp;
+        private List<Expression> updates;
+
+        public ForStatement(List<Expression> forinit, Expression exp, List<Expression> updates)
+        {
+            this.forinit = forinit;
+            this.exp = exp;
+            this.updates = updates;
+        }
+
+        public override void ResolveNames(LexicalScope scope)
+        {
+            foreach (Expression fi in this.forinit)
+            {
+                fi.ResolveNames(scope);
+            }
+
+            if (this.exp != null)
+                this.exp.ResolveNames(scope);
+            foreach (Expression up in this.updates)
+            {
+                up.ResolveNames(scope);
+            }
+        }
+
+        public override void TypeCheck()
+        {
+            foreach (Expression fi in this.forinit)
+            {
+                fi.TypeCheck();
+            }
+
+            if (this.exp != null)
+                this.exp.TypeCheck();
+
+            foreach (Expression up in this.updates)
+            {
+                up.TypeCheck();
+            }
+        }
+
+        public override void SetVariable(System.Type type, LocalVariableDeclaration lvd, Type val)
+        {
+
+        }
+
+        public override void GenCode(StreamWriter of, string genOption, int level)
+        {
+            if (this.exp != null)
+            {
+                this.exp.GenCode(of, "[[load]]", level);
+            }
+
+            EmitLine(of, level, "brfalse \t {0}_IF", genOption);
+
         }
     }
 }
