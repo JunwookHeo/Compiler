@@ -9,7 +9,7 @@ A compiler is a computer program that transforms a source code written in a prog
 
 ## Prerequisites
 
-The Java compiler is implemented using GPPG in C#. 
+The Java compiler is implemented using GPPG in C#.  
 **Visual Studio 2017**
 
 ## References
